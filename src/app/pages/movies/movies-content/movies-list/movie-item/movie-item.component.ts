@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { Movie } from 'src/app/shared/models/movie.model';
+import { Router } from '@angular/router';
 
 @Component({
 	selector: 'app-movie-item',
@@ -8,9 +9,19 @@ import { Movie } from 'src/app/shared/models/movie.model';
 })
 export class MovieItemComponent {
 
+	isActive: boolean;
+
 	@Input() movie: Movie;
 
 	brokenImg: string = 'assets/404.jpg';
 
-	constructor() { }
+	constructor(private router: Router) { }
+
+	setActive(val) {
+		this.isActive = val;
+	}
+
+	selectItem() {
+		this.router.navigate(['/movies/movie', this.movie['imdbID']]);
+	}
 }

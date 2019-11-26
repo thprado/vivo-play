@@ -1,10 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { FormBuilder, FormControl, Validators, FormGroup } from '@angular/forms';
 import { Observable, Subject, Subscription, of } from 'rxjs';
 import { switchMap, debounceTime, tap, map, distinctUntilChanged } from 'rxjs/operators';
 import { MovieService } from 'src/app/shared/services/movie.service';
 import { Movie } from 'src/app/shared/models/movie.model';
 import { ActivatedRoute, Router, Params, ParamMap } from '@angular/router';
+import { MoviesListComponent } from './movies-list/movies-list.component';
 @Component({
 	selector: 'app-movies-content',
 	templateUrl: './movies-content.component.html',
@@ -17,7 +18,8 @@ export class MoviesContentComponent implements OnInit {
 	movies: Movie[] = [];
 	hasSearched: boolean = false;
 	userSubscription: Subscription;
-
+	@ViewChild('movieListChild', {static: false}) movieListChild: MoviesListComponent;
+	
 	constructor(private formBuilder: FormBuilder,
 		private movieService: MovieService,
 		private route: ActivatedRoute) {
@@ -42,6 +44,7 @@ export class MoviesContentComponent implements OnInit {
 		).subscribe(movies => {
 			this.hasSearched = true;
 			this.movies = movies;
+			this.movieListChild.refreshElem();
 		});
 	}
 

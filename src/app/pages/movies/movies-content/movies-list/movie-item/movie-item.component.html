@@ -1,4 +1,4 @@
-<div class="card" *ngIf="movie && movie.imdbID" [routerLink]="['/movies/movie', movie.imdbID ? movie.imdbID : '']">
+<div class="card" [class.selected]="isActive" *ngIf="movie && movie.imdbID" [routerLink]="['/movies/movie', movie.imdbID ? movie.imdbID : '']">
 	<div class="card-img-top card-img-top-250 one">
 		<img [src]="movie?.Poster && movie.Poster !== 'N/A' ? movie.Poster : brokenImg" class="card-img-top " alt="{{ movie?.Title }}" title="{{ movie?.Title }}">
 	</div>
