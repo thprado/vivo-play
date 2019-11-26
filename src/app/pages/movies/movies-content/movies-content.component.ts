@@ -46,24 +46,13 @@ export class MoviesContentComponent implements OnInit {
 	}
 
 	prepareSearch(): void {
-		// this.route.params.subscribe(
-		// 	params => {
-		// 		const lastSearch = +params['lastsearch'];
-		// 		debugger;
-		// 		if (lastSearch) {
-
-		// 		}
-
-
-		// 	}
-		// );
 		if (this.route.paramMap) {
 			this.route.paramMap.pipe(
 				switchMap((params: ParamMap) =>
 					of(params.get('lastsearch'))
 				)
 			).subscribe((d) => {
-				const lastSearch = d; debugger;
+				const lastSearch = d;
 				if (lastSearch) {
 					this.searchForm.controls['searchInput'].setValue(lastSearch);
 				}
