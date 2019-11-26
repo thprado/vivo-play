@@ -1,0 +1,33 @@
+
+$background-color: #141414;
+$font-text: #fff;
+$font-text-hover: #000;
+
+body {
+	background-color: $background-color !important;
+}
+
+div.theme-dropdown {
+	background-color: rgba(0,0,0,0.9);
+	border: 1px solid rgba(255,255,255,0.15);
+	box-sizing: border-box;
+	color: $font-text;
+}
+
+a.theme-dropdown-item {
+	color: $font-text;
+	cursor: pointer;
+}
+
+a.theme-dropdown-item:hover {
+	background-color: #f8f9fa;
+	color: $font-text-hover !important;
+}
+
+
+
+// a.theme-dropdown-item:hover {
+// 	color: pink;
+// }
+
+// .dropdown-item

@@ -1,0 +1,39 @@
+<div class="container">
+	<div class="card mb-3 mt-5" style="background-color: transparent;">
+		<div class="row no-gutters">
+			<div class="col-md-4">
+				<img [src]="movie?.Poster && movie.Poster !== 'N/A' ? movie.Poster : brokenImg" class="card-img" alt="{{ movie?.Title}}" title="{{ movie?.Title}}">
+			</div>
+			<div class="col-md-8">
+				<div class="card-body">
+
+					<h3 id="title" class="text-color mt-1">{{ movie?.Title }} ({{ movie?.Year }})</h3>
+
+					<p class="text-color">
+						{{ movie?.Runtime }} - {{ movie?.Genre }}
+					</p>
+
+					<p class="text-color">
+						{{ movie?.Plot }}
+					</p>
+
+					<b class="text-white">
+						Atores:
+					</b>
+					<span class="text-color">{{ movie?.Actors }}</span>
+					<br>
+					<b class="text-white">Diretores:</b>&nbsp;<span class="text-color">{{ movie?.Director }}</span>
+					<p class="text-white"><b class="text-white">Idioma Original:&nbsp;</b><span class="text-color">{{ movie?.Language }}</span></p>
+
+					<div *ngFor="let Rating of movie?.Ratings">
+						<b class="text-white">{{ Rating?.Source }}:&nbsp;</b><span class="text-color">{{ Rating?.Value }}</span>
+						<br>
+					</div>
+					<br>
+					<button type="button" (click)="backToMain()" class="btn btn-secondary">Voltar</button>
+					<button type="button" routerLink="/movies" class="btn btn-secondary ml-2">Nova Busca</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

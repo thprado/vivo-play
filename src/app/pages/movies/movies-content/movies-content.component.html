@@ -1,0 +1,10 @@
+<form [formGroup]="searchForm">
+	<app-search-bar [searchControl]="searchForm.get('searchInput')" (searchOutput)="searchEvent($event)">
+
+	</app-search-bar>
+</form>
+
+<div class="container">
+	<h1 *ngIf="hasSearched" class="text-white">{{ movies.length }} resultados foram encontrados para ´{{ searchForm.get('searchInput').value }}´</h1>
+	<app-movies-list [moviesList]="movies" (selectedMovie)="receiveSelectedMovie($event);"></app-movies-list>
+</div>

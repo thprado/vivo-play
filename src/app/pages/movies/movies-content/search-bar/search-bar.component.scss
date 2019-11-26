@@ -1,0 +1,14 @@
+input#searchField {
+	background-color: transparent;
+	border-style: none none solid solid;
+	border-bottom-color: #8a8a8a;
+	border-left-color: #8a8a8a;
+	color: #fff;
+}
+
+input#searchField:focus {
+	border-color: none;
+	box-shadow: none;
+}
+
+

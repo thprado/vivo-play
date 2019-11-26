@@ -1,0 +1,11 @@
+<ul class="navbar-nav">
+	<li class="nav-item dropdown ml-auto">
+		<a class="nav-link dropdown-toggle text-white" id="btnNotification" data-toggle="dropdown" (click)="toggleNotification()"><i class="fa fa-bell"></i></a>
+		<div class="dropdown-menu dropdown-menu-right theme-dropdown" aria-labelledby="navbarDropdown" [ngClass]="{show: toggleNotifications === true}">
+
+			<a *ngFor="let notification of notificationsList" class="dropdown-item theme-dropdown-item notification-item" [routerLink]="[notification.link]">
+				{{ notification.text }}
+			</a>
+		</div>
+	</li>
+</ul>

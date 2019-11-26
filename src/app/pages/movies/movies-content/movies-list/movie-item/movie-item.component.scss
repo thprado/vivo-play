@@ -1,0 +1,21 @@
+$cardBgColor: #525252;
+$movieTitleColor: #fff;
+
+img {
+	height: 185px;
+	background-size: contain;
+}
+
+div.card {
+	background-color: $cardBgColor;
+	margin: 10px;
+	color: $movieTitleColor;
+	cursor: pointer;
+}
+
+.movie-title {
+	width: 200px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}

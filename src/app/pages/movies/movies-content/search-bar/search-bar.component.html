@@ -1,0 +1,20 @@
+<nav class="navbar navbar-expand-md navbar-light bg-faded">
+	<div class="navbar-collapse collapse" id="navbar5">
+		<div class="col-sm-6 col-md-10 col-lg-10">
+			<input autofocus autocomplete="off" id="searchField" type="text" [formControl]="searchControl" class="form-control" placeholder="Digite o nome do filme">
+		</div>
+		<div class="col-sm-2 col-md-1 col-lg-1">
+			<app-notifications [notificationsList]="notifications">
+
+			</app-notifications>
+		</div>
+
+		<div class="col-sm-2 col-md-1 col-lg-1">
+			<app-user-settings>
+
+			</app-user-settings>
+		</div>
+	</div>
+</nav>
+
+
