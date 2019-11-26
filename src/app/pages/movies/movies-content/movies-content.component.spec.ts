@@ -11,7 +11,7 @@ import { RouterTestingModule } from '@angular/router/testing';
 import { HttpClientModule } from '@angular/common/http';
 import { Movie } from 'src/app/shared/models/movie.model';
 import { MovieService } from 'src/app/shared/services/movie.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, convertToParamMap } from '@angular/router';
 import { of } from 'rxjs';
 
 describe('MoviesContentComponent', () => {
@@ -51,7 +51,8 @@ describe('MoviesContentComponent', () => {
 			providers: [
 				{
 					provide: ActivatedRoute,
-					useValue: { snapshot: { url: [{ path: 'batman' }]}}
+					useValue: { paramMap: of(convertToParamMap({lastsearch: 'batman'})) }
+
 				},
 				MovieService
 			]
