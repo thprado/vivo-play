@@ -1,6 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { Movie } from 'src/app/shared/models/movie.model';
 import { Router } from '@angular/router';
+import { appConst } from 'src/app/shared/commons/constants';
 
 @Component({
 	selector: 'app-movie-item',
@@ -13,7 +14,7 @@ export class MovieItemComponent {
 
 	@Input() movie: Movie;
 
-	brokenImg: string = 'assets/404.jpg';
+	brokenImg: string = appConst.brokenImg;
 
 	constructor(private router: Router) { }
 

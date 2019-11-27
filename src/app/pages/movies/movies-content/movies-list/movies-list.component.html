@@ -1,5 +1,5 @@
 <div class="row mt-5 movies-list">
-	<app-movie-item (keyup)="handleKey($event)" tabindex="$index" *ngFor="let movie of moviesList" class="col-12 col-sm-6 col-md-4 col-lg-3" [movie]="movie">
+	<app-movie-item (keyup)="handleKey($event)" tabindex="1" id="movieItem_{{movie.imdbID}}" (click)="selectElement(movie.imdbID);" tabindex="$index" *ngFor="let movie of moviesList" class="col-12 col-sm-6 col-md-4 col-lg-3" [movie]="movie">
 
 	</app-movie-item>
 </div>

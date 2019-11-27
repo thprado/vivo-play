@@ -19,7 +19,7 @@ export class MoviesContentComponent implements OnInit {
 	hasSearched: boolean = false;
 	userSubscription: Subscription;
 	@ViewChild('movieListChild', {static: false}) movieListChild: MoviesListComponent;
-	
+
 	constructor(private formBuilder: FormBuilder,
 		private movieService: MovieService,
 		private route: ActivatedRoute) {
@@ -61,6 +61,5 @@ export class MoviesContentComponent implements OnInit {
 				}
 			});
 		}
-
 	}
 }

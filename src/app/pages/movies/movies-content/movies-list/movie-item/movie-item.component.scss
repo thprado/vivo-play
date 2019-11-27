@@ -14,12 +14,12 @@ div.card {
 }
 
 .movie-title {
-	width: 200px;
 	overflow: hidden;
 	text-overflow: ellipsis;
-	white-space: nowrap;
+	text-decoration: none;
+	color:	#fff;
 }
 
 .selected {
-    border: solid #99ffff 1px;
+	border: solid #99ffff 1px;
 }
